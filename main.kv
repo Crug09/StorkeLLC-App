@@ -1,0 +1,21 @@
+<Main_Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10 
+        GridLayout:
+            cols: 1
+            rows: 2
+            spacing: 10
+
+            Button:
+                text: 'To Distance Calcuator'
+                on_press: 
+                    root.manager.transition.direction='left'
+                    root.manager.current = 'distance_calc_screen'        
+                    
+            Button: 
+                text: 'Megger Test Screen'
+                on_press: 
+                    root.manager.transition.direction='left'
+                    root.manager.current = 'megger_test_screen'

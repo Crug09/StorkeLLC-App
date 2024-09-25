@@ -1,0 +1,126 @@
+<Distance_Calc_Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10 
+        GridLayout:
+            cols: 1
+            rows: 4
+            GridLayout:
+                cols: 2
+                rows: 4
+                spacing: 10
+                size_hint_y: None
+                height: 280
+
+                TextInput:
+                    text: ''
+                    id: name
+                    hint_text: 'Enter name of file'
+                    size_hint_y: None
+                    size_hint_x: 0.75
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+
+                Button:
+                    text: 'X '
+                    size_hint_y: None
+                    size_hint_x: None
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+                    on_press: 
+                        root.clear_distance_spec(self)
+
+                TextInput:
+                    text: ''
+                    id: customers
+                    hint_text: 'Enter customers'
+                    size_hint_y: None
+                    size_hint_x: 0.75
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+
+                Button:
+                    text: ' X '
+                    size_hint_y: None
+                    size_hint_x: None
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+                    on_press: 
+                        root.clear_distance_spec(self)
+
+                TextInput:
+                    text: ''
+                    id: hours
+                    hint_text: 'Enter hours in the same order as customers'
+                    size_hint_y: None
+                    size_hint_x: 0.75
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5
+
+                Button:
+                    text: ' X  '
+                    size_hint_y: None
+                    size_hint_x: None
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+                    on_press: 
+                        root.clear_distance_spec(self)
+
+                TextInput:
+                    text: ''
+                    id: rate
+                    hint_text: 'Enter rate'
+                    size_hint_y: None
+                    size_hint_x: 0.75
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5 
+
+                Button:
+                    text: '  X  '
+                    size_hint_y: None
+                    size_hint_x: None
+                    height: 60
+                    padding_x: 10  
+                    padding_y: 5
+                    on_press: 
+                        root.clear_distance_spec(self) 
+
+            GridLayout:
+                cols: 2
+                rows: 1
+                spacing: 10
+                size_hint_y: None
+                height: 50 
+                
+                Button:
+                    text: 'Enter'
+                    on_press: 
+                        root.process_distance()
+
+                Button:
+                    text: 'Clear'
+                    on_press:
+                        root.clear_distance(self)
+
+            Label:
+                id: distance_calc_id
+                text: ''
+
+
+
+            Button:
+                size_hint_y: None
+                height: 70 
+                text: 'To Main Screen'
+                on_press:
+                    root.manager.transition.direction='right'
+                    root.manager.current = 'main_screen'      
+                    

@@ -1,0 +1,226 @@
+<Megger_Test_Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        GridLayout:
+            cols: 2
+            rows: 1
+            spacing: 10
+            size_hint_y: None
+            height: 40 
+            TextInput:
+                id: customer_name
+                text: ''
+                hint_text: 'Enter Customers Name' 
+                multiline: False 
+                size_hint_x: 0.75
+                padding_x: 10  
+                padding_y: 5
+            Button:
+                text: 'X'
+                padding_x: 10  
+                padding_y: 5
+                size_hint_x: None
+                on_press: 
+                    root.clear_megger_spec(self)
+                
+        
+        GridLayout:
+            cols: 4
+            rows: 4
+            spacing: 5
+            padding: 5
+            
+            CheckBox:
+                id: underground_wire
+            Label:
+                text: 'Underground Wire'
+                font_size: 20
+                
+            CheckBox:
+                id: tower_disconnect_switch
+            Label:
+                text: 'Tower Disconnect Switch'
+                font_size: 20
+                
+            CheckBox:
+                id: tower_wire
+            Label:
+                text: 'Tower Wire'
+                font_size: 20
+                
+            CheckBox:
+                id: junction_box
+            Label:
+                text: 'Junction Box'
+                font_size: 20
+                
+            CheckBox:
+                id: slip_rings
+            Label:
+                text: 'Slip Rings'
+                font_size: 20
+                
+            CheckBox:
+                id: brush_block
+            Label:
+                text: 'Brush Block'
+                font_size: 20
+                
+            CheckBox:
+                id: altenator
+            Label:
+                text: 'Altenator'
+                font_size: 20
+                
+            Label:
+                size_hint_x: None
+                text: ''
+            Button:
+                text: 'X '
+                on_press: 
+                    root.clear_megger_spec(self)
+
+        GridLayout:
+            cols:2
+            rows:3
+            TextInput:
+                text: ''
+                id: phase_1
+                hint_text: 'Enter Phase 1'
+                size_hint_y: None
+                size_hint_x: 0.75
+                height: 40 
+                padding_x: 10  
+                padding_y: 5 
+                multiline: False 
+                input_filter: 'int' 
+
+            Button:
+                text: ' X '
+                size_hint_y: None
+                size_hint_x: None
+                height: 40
+                padding_x: 10  
+                padding_y: 5 
+                on_press: 
+                    root.clear_megger_spec(self)
+            
+            TextInput:
+                text: ''
+                id: phase_2
+                hint_text: 'Enter Phase 2'
+                size_hint_y: None
+                size_hint_x: 0.75
+                height: 40 
+                padding_x: 10  
+                padding_y: 5 
+                multiline: False 
+                input_filter: 'int'
+
+            Button:
+                text: ' X  '
+                size_hint_y: None
+                size_hint_x: None
+                height: 40
+                padding_x: 10  
+                padding_y: 5 
+                on_press: 
+                    root.clear_megger_spec(self)
+            
+            TextInput:
+                text: ''
+                id: phase_3
+                hint_text: 'Enter Phase 3'
+                size_hint_y: None
+                size_hint_x: 0.75
+                height: 40 
+                padding_x: 10  
+                padding_y: 5 
+                multiline: False 
+                input_filter: 'int'
+
+            Button:
+                text: '  X  '
+                size_hint_y: None
+                size_hint_x: None
+                height: 40
+                padding_x: 10  
+                padding_y: 5 
+                on_press: 
+                    root.clear_megger_spec(self)
+        
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: 50 
+            
+            Button:
+                text: 'Enter'
+                on_press: 
+                    root.process_input()
+
+            Button:
+                text: 'Clear'
+                on_press:
+                    root.clear_inputs()
+
+        Label: 
+            id: megger_test_id
+            font_size: 32
+            text: ''
+        GridLayout:
+            cols: 1
+            rows: 1
+            spacing: 10
+            size_hint_y: None
+            height: 70 
+            Button:
+                text: 'To Main Screen'
+                on_press:
+                    root.manager.transition.direction='right'
+                    root.manager.current = 'main_screen'
+            # Button:
+            #     text: 'Check Previous Customer Names'
+            #     on_press:
+            #         app.show_excel_files()
+            #         root.manager.transition.direction='left'
+            #         root.manager.current = 'name_screen'
+
+# <Names_Screen>:
+
+#     BoxLayout:
+#         orientation: 'vertical'
+#         padding: [10, 50, 10, 10]  
+#         spacing: 10
+
+#         ScrollView:
+#             size_hint: (1, 1)
+#             do_scroll_x: False
+#             do_scroll_y: True
+
+#             BoxLayout:
+#                 orientation: 'vertical'
+#                 size_hint_y: None
+#                 height: self.minimum_height 
+
+#                 Label:
+#                     id: file_list_label
+#                     font_size: 32
+#                     size_hint_y: None
+#                     height: self.texture_size[1]  
+#                     width: self.texture_size[0] 
+
+
+
+#         Button:
+#             text: 'Go to Home'
+#             spacing: 10
+#             size_hint_y: None
+#             height: 70 
+#             on_press: 
+#                 root.manager.transition.direction='right'
+#                 root.manager.current = 'megger_test_screen'
