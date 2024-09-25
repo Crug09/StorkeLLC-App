@@ -31,6 +31,8 @@
             rows: 4
             spacing: 5
             padding: 5
+            size_hint_y: None
+            height: 120 
             
             CheckBox:
                 id: underground_wire
@@ -85,6 +87,8 @@
         GridLayout:
             cols:2
             rows:3
+            size_hint_y: None
+            height: 120
             TextInput:
                 text: ''
                 id: phase_1
@@ -152,8 +156,9 @@
                     root.clear_megger_spec(self)
         
 
-        BoxLayout:
-            orientation: 'horizontal'
+        GridLayout:
+            cols: 2
+            rows: 1
             spacing: 10
             size_hint_y: None
             height: 50 
